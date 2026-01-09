@@ -33,8 +33,13 @@ export default function Home() {
       onKeyUp={() => {}}
     >
       {menu.visible && (
-        <div className="fixed" style={{ left: menu.x, top: menu.y }}>
-          <p>Menu</p>
+        <div
+          className="fixed bg-[#36363a] p-4 rounded-2xl flex flex-col gap-3"
+          style={{ left: menu.x, top: menu.y }}
+        >
+          <button>Change background...</button>
+          <button>Display settings</button>
+          <button>Settings</button>
         </div>
       )}
     </main>
