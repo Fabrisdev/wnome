@@ -1,3 +1,5 @@
 export default function Home() {
-  return <main></main>;
+  return (
+    <main className="bg-[url(/backgrounds/blobs-d.svg)] h-svh bg-cover bg-center"></main>
+  );
 }
