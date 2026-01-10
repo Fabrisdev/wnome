@@ -105,21 +105,34 @@ export function Settings({ initialPanel, id, position }: Props) {
           </Button>
           <hr className="border-[#424247]" />
           <Button onClick={() => setPanel("mouse-&-touchpad")}>
+            <Icon name="settings-mouse-symbolic" />
             Mouse & Touchpad
           </Button>
-          <Button onClick={() => setPanel("keyboard")}>Keyboard</Button>
+          <Button onClick={() => setPanel("keyboard")}>
+            <Icon name="settings-keyboard-symbolic" />
+            Keyboard
+          </Button>
           <Button onClick={() => setPanel("color-management")}>
+            <Icon name="settings-color-symbolic" />
             Color Management
           </Button>
-          <Button onClick={() => setPanel("printers")}>Printers</Button>
+          <Button onClick={() => setPanel("printers")}>
+            <Icon name="settings-printers-symbolic" />
+            Printers
+          </Button>
           <hr className="border-[#424247]" />
           <Button onClick={() => setPanel("accessibility")}>
+            <Icon name="settings-accessibility-symbolic" />
             Accessibility
           </Button>
           <Button onClick={() => setPanel("privacy-&-security")}>
+            <Icon name="settings-privacy-symbolic" />
             Privacy & Security
           </Button>
-          <Button onClick={() => setPanel("system")}>System</Button>
+          <Button onClick={() => setPanel("system")}>
+            <Icon name="settings-system-symbolic" />
+            System
+          </Button>
         </div>
         <div className="bg-[#222226] rounded-br-2xl">
           {panel === "appearance" && <Appearance />}

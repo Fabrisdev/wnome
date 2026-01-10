@@ -15,7 +15,14 @@ type Props = {
     | "system-search-symbolic"
     | "settings-online-accounts-symbolic"
     | "settings-sharing-symbolic"
-    | "settings-wellbeing-symbolic";
+    | "settings-wellbeing-symbolic"
+    | "settings-accessibility-symbolic"
+    | "settings-color-symbolic"
+    | "settings-keyboard-symbolic"
+    | "settings-mouse-symbolic"
+    | "settings-printers-symbolic"
+    | "settings-privacy-symbolic"
+    | "settings-system-symbolic";
   theme?: "dark" | "light";
 };
 
