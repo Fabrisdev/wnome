@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "@/app/components/Button";
 import { Icon } from "@/ui/Icon";
 import { BackgroundOption } from "./BackgroundOption";
