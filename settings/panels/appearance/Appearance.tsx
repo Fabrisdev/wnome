@@ -1,6 +1,7 @@
 import { Button } from "@/app/components/Button";
 import { Icon } from "@/ui/Icon";
 import { PanelContainer } from "../PanelContainer";
+import { AccentColor } from "./AccentColor";
 import { BackgroundOption } from "./BackgroundOption";
 import { ThemeOption } from "./ThemeOption";
 
@@ -15,15 +16,15 @@ export function Appearance() {
       <div></div>
       <p className="font-bold">Accent Color</p>
       <PanelContainer className="flex justify-center gap-4.5">
-        <div className="rounded-full size-6 bg-[#3584e4]"></div>
-        <div className="rounded-full size-6 bg-[#2190a4]"></div>
-        <div className="rounded-full size-6 bg-[#3a944a]"></div>
-        <div className="rounded-full size-6 bg-[#c88800]"></div>
-        <div className="rounded-full size-6 bg-[#ed5b00]"></div>
-        <div className="rounded-full size-6 bg-[#e62d42]"></div>
-        <div className="rounded-full size-6 bg-[#d56199]"></div>
-        <div className="rounded-full size-6 bg-[#9141ac]"></div>
-        <div className="rounded-full size-6 bg-[#6f8396]"></div>
+        <AccentColor color="#3584e4" />
+        <AccentColor color="#2190a4" />
+        <AccentColor color="#3a944a" />
+        <AccentColor color="#c88800" />
+        <AccentColor color="#ed5b00" />
+        <AccentColor color="#e62d42" />
+        <AccentColor color="#d56199" />
+        <AccentColor color="#9141ac" />
+        <AccentColor color="#6f8396" />
       </PanelContainer>
       <div></div>
       <div className="flex justify-between items-center">
