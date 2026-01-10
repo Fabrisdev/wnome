@@ -51,7 +51,7 @@ export function Settings({ initialPanel, id, position }: Props) {
       >
         <div
           className="flex flex-col min-w-50 rounded-bl-2xl"
-          style={{ backgroundColor: colors.sidebar }}
+          style={{ backgroundColor: colors.sidebar.bg }}
         >
           <Button onClick={() => setPanel("wi-fi")}>
             <Icon name="network-wireless-symbolic" />
@@ -144,7 +144,10 @@ export function Settings({ initialPanel, id, position }: Props) {
             System
           </Button>
         </div>
-        <div className="bg-[#222226] rounded-br-2xl">
+        <div
+          className="rounded-br-2xl"
+          style={{ backgroundColor: colors.panel.bg }}
+        >
           {panel === "appearance" && <Appearance />}
         </div>
       </div>
