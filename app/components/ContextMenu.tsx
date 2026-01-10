@@ -11,7 +11,7 @@ export function ContextMenu({ x, y, visible }: Props) {
 
   return (
     <div
-      className="fixed bg-[#36363a] p-4 rounded-2xl flex flex-col gap-3"
+      className="fixed bg-[#36363a] p-1.5 rounded-2xl flex flex-col gap-3"
       style={{ left: x, top: y }}
     >
       <Button onClick={() => {}}>Change background...</Button>
