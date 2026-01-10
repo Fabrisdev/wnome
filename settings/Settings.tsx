@@ -51,11 +51,13 @@ export function Settings({ initialPanel, id, position }: Props) {
           </Button>
 
           <Button onClick={() => setPanel("bluetooth")}>Bluetooth</Button>
+          <hr className="border-[#424247]" />
           <Button onClick={() => setPanel("displays")}>Displays</Button>
           <Button onClick={() => setPanel("sound")}>Sound</Button>
           <Button onClick={() => setPanel("power")}>Power</Button>
           <Button onClick={() => setPanel("multitasking")}>Multitasking</Button>
           <Button onClick={() => setPanel("appearance")}>Appearance</Button>
+          <hr className="border-[#424247]" />
           <Button onClick={() => setPanel("apps")}>Apps</Button>
           <Button onClick={() => setPanel("notifications")}>
             Notifications
@@ -66,6 +68,7 @@ export function Settings({ initialPanel, id, position }: Props) {
           </Button>
           <Button onClick={() => setPanel("sharing")}>Sharing</Button>
           <Button onClick={() => setPanel("wellbeing")}>Wellbeing</Button>
+          <hr className="border-[#424247]" />
           <Button onClick={() => setPanel("mouse-&-touchpad")}>
             Mouse & Touchpad
           </Button>
@@ -74,6 +77,7 @@ export function Settings({ initialPanel, id, position }: Props) {
             Color Management
           </Button>
           <Button onClick={() => setPanel("printers")}>Printers</Button>
+          <hr className="border-[#424247]" />
           <Button onClick={() => setPanel("accessibility")}>
             Accessibility
           </Button>
