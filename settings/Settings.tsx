@@ -22,7 +22,7 @@ export type Panel =
   | "mouse-&-touchpad"
   | "keyboard"
   | "color-management"
-  | "prints"
+  | "printers"
   | "accessibility"
   | "privacy-&-security"
   | "system";
@@ -45,7 +45,36 @@ export function Settings({ initialPanel, id, position }: Props) {
           <Button onClick={() => setPanel("wi-fi")}>Wi-Fi</Button>
           <Button onClick={() => setPanel("network")}>Network</Button>
           <Button onClick={() => setPanel("bluetooth")}>Bluetooth</Button>
+          <Button onClick={() => setPanel("displays")}>Displays</Button>
+          <Button onClick={() => setPanel("sound")}>Sound</Button>
+          <Button onClick={() => setPanel("power")}>Power</Button>
+          <Button onClick={() => setPanel("multitasking")}>Multitasking</Button>
           <Button onClick={() => setPanel("appearance")}>Appearance</Button>
+          <Button onClick={() => setPanel("apps")}>Apps</Button>
+          <Button onClick={() => setPanel("notifications")}>
+            Notifications
+          </Button>
+          <Button onClick={() => setPanel("search")}>Search</Button>
+          <Button onClick={() => setPanel("online-accounts")}>
+            Online Accounts
+          </Button>
+          <Button onClick={() => setPanel("sharing")}>Sharing</Button>
+          <Button onClick={() => setPanel("wellbeing")}>Wellbeing</Button>
+          <Button onClick={() => setPanel("mouse-&-touchpad")}>
+            Mouse & Touchpad
+          </Button>
+          <Button onClick={() => setPanel("keyboard")}>Keyboard</Button>
+          <Button onClick={() => setPanel("color-management")}>
+            Color Management
+          </Button>
+          <Button onClick={() => setPanel("printers")}>Printers</Button>
+          <Button onClick={() => setPanel("accessibility")}>
+            Accessibility
+          </Button>
+          <Button onClick={() => setPanel("privacy-&-security")}>
+            Privacy & Security
+          </Button>
+          <Button onClick={() => setPanel("system")}>System</Button>
         </div>
         <div className="bg-[#222226]">
           {panel === "appearance" && <Appearance />}
