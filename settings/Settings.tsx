@@ -4,7 +4,7 @@ import type { WindowProps } from "@/windows/types";
 import { Window } from "@/windows/Window";
 import { Appearance } from "./panels/Appearance";
 
-type Panel = "wi-fi" | "network" | "bluetooth" | "appearance";
+export type Panel = "wi-fi" | "network" | "bluetooth" | "appearance";
 
 type Props = {
   initialPanel: Panel;

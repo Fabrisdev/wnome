@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import type { Panel } from "@/settings/Settings";
 
 type App = "settings";
 export type Position = {
@@ -9,18 +10,25 @@ type Window = {
   id: string;
   app: App;
   position: Position;
+  options: SpawnOptions[App];
+};
+
+type SpawnOptions = {
+  settings?: {
+    initialPanel: Panel;
+  };
 };
 
 type WindowsState = {
   windows: Window[];
-  spawn: (app: App) => void;
+  spawn: <T extends App>(app: T, options?: SpawnOptions[T]) => void;
   kill: (id: string) => void;
   move: (id: string, position: Position) => void;
 };
 
 export const useWindowsStore = create<WindowsState>((set) => ({
   windows: [],
-  spawn: (app) =>
+  spawn: (app, options) =>
     set((state) => ({
       windows: [
         ...state.windows,
@@ -31,6 +39,7 @@ export const useWindowsStore = create<WindowsState>((set) => ({
             x: 0,
             y: 0,
           },
+          options,
         },
       ],
     })),
