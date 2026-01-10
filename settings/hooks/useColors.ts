@@ -5,6 +5,7 @@ export function useColors() {
   return {
     sidebar: {
       bg: theme === "dark" ? "#2e2e32" : "#ebebed",
+      divider: theme === "dark" ? "#424247" : "#d2d2d4",
     },
     panel: {
       bg: theme === "dark" ? "#222226" : "#fafafb",

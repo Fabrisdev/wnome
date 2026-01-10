@@ -5,6 +5,7 @@ import type { WindowProps } from "@/windows/types";
 import { Window } from "@/windows/Window";
 import { useColors } from "./hooks/useColors";
 import { Appearance } from "./panels/appearance/Appearance";
+import { Divider } from "./panels/Divider";
 
 export type Panel =
   | "wi-fi"
@@ -67,7 +68,7 @@ export function Settings({ initialPanel, id, position }: Props) {
             <Icon name="bluetooth-symbolic" />
             Bluetooth
           </Button>
-          <hr className="border-[#424247]" />
+          <Divider />
           <Button onClick={() => setPanel("displays")}>
             <Icon name="video-display-symbolic" />
             Displays
@@ -88,7 +89,7 @@ export function Settings({ initialPanel, id, position }: Props) {
             <Icon name="settings-appearance-symbolic" />
             Appearance
           </Button>
-          <hr className="border-[#424247]" />
+          <Divider />
           <Button onClick={() => setPanel("apps")}>
             <Icon name="settings-applications-symbolic" />
             Apps
@@ -113,7 +114,7 @@ export function Settings({ initialPanel, id, position }: Props) {
             <Icon name="settings-wellbeing-symbolic" />
             Wellbeing
           </Button>
-          <hr className="border-[#424247]" />
+          <Divider />
           <Button onClick={() => setPanel("mouse-&-touchpad")}>
             <Icon name="settings-mouse-symbolic" />
             Mouse & Touchpad
@@ -130,7 +131,7 @@ export function Settings({ initialPanel, id, position }: Props) {
             <Icon name="settings-printers-symbolic" />
             Printers
           </Button>
-          <hr className="border-[#424247]" />
+          <Divider />
           <Button onClick={() => setPanel("accessibility")}>
             <Icon name="settings-accessibility-symbolic" />
             Accessibility
