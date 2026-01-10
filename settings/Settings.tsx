@@ -3,6 +3,7 @@ import { Button } from "@/app/components/Button";
 import { Icon } from "@/ui/Icon";
 import type { WindowProps } from "@/windows/types";
 import { Window } from "@/windows/Window";
+import { useColors } from "./hooks/useColors";
 import { Appearance } from "./panels/appearance/Appearance";
 
 export type Panel =
@@ -34,6 +35,7 @@ type Props = {
 
 export function Settings({ initialPanel, id, position }: Props) {
   const [panel, setPanel] = useState(initialPanel);
+  const colors = useColors();
   return (
     <Window
       id={id}
@@ -41,8 +43,16 @@ export function Settings({ initialPanel, id, position }: Props) {
       title={`Settings - ${panel}`}
       className="p-0!"
     >
-      <div className="flex">
-        <div className="flex flex-col bg-[#2e2e32] min-w-50 rounded-bl-2xl">
+      <div
+        className="flex"
+        style={{
+          color: colors.text,
+        }}
+      >
+        <div
+          className="flex flex-col min-w-50 rounded-bl-2xl"
+          style={{ backgroundColor: colors.sidebar }}
+        >
           <Button onClick={() => setPanel("wi-fi")}>
             <Icon name="network-wireless-symbolic" />
             Wi-Fi
