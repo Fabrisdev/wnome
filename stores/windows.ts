@@ -15,6 +15,7 @@ type WindowsState = {
   windows: Window[];
   spawn: (app: App) => void;
   kill: (id: string) => void;
+  move: (id: string, position: Position) => void;
 };
 
 export const useWindowsStore = create<WindowsState>((set) => ({
@@ -36,5 +37,11 @@ export const useWindowsStore = create<WindowsState>((set) => ({
   kill: (id) =>
     set((state) => ({
       windows: state.windows.filter((window) => window.id !== id),
+    })),
+  move: (id, position) =>
+    set((state) => ({
+      windows: state.windows.map((window) =>
+        window.id === id ? { ...window, position } : window,
+      ),
     })),
 }));
