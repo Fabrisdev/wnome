@@ -1,6 +1,7 @@
 "use client";
 
 import { useBackground } from "@/hooks/useBackground";
+import { WindowManager } from "@/windows/WindowManager";
 import { ContextMenu } from "./components/ContextMenu";
 import { useContextMenu } from "./hooks/useContextMenu";
 
@@ -18,6 +19,7 @@ export default function Home() {
         backgroundImage: `url(${background})`,
       }}
     >
+      <WindowManager />
       <ContextMenu visible={menu.visible} x={menu.x} y={menu.y} />
     </main>
   );
