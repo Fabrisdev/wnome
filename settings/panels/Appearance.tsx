@@ -47,6 +47,38 @@ export function Appearance() {
           <p className="font-bold">Add Picture...</p>
         </Button>
       </div>
+      <div className="bg-[#343437] p-4 rounded-xl grid grid-cols-3 place-items-center gap-4">
+        <Image
+          src="/settings/appearance/bg-option-blobs.png"
+          alt="Blobs option background"
+          width={144}
+          height={108}
+        />
+        <Image
+          src="/settings/appearance/bg-option-drool.png"
+          alt="Drool option background"
+          width={144}
+          height={108}
+        />
+        <Image
+          src="/settings/appearance/bg-option-drool.png"
+          alt="Drool option background"
+          width={144}
+          height={108}
+        />
+        <Image
+          src="/settings/appearance/bg-option-drool.png"
+          alt="Drool option background"
+          width={144}
+          height={108}
+        />
+        <Image
+          src="/settings/appearance/bg-option-drool.png"
+          alt="Drool option background"
+          width={144}
+          height={108}
+        />
+      </div>
     </div>
   );
 }
