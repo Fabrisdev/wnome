@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/app/components/Button";
+import type { WindowProps } from "@/windows/types";
 import { Window } from "@/windows/Window";
 import { Appearance } from "./panels/Appearance";
 
@@ -7,12 +8,12 @@ type Panel = "wi-fi" | "network" | "bluetooth" | "appearance";
 
 type Props = {
   initialPanel: Panel;
-};
+} & WindowProps;
 
-export function Settings({ initialPanel }: Props) {
+export function Settings({ initialPanel, id, position }: Props) {
   const [panel, setPanel] = useState(initialPanel);
   return (
-    <Window>
+    <Window id={id} position={position}>
       <p>Settings - {panel}</p>
       <div className="flex">
         <div className="flex flex-col">

@@ -1,8 +1,9 @@
 import type { PropsWithChildren } from "react";
+import type { WindowProps } from "./types";
 
 type Props = {
   className?: string;
-};
+} & WindowProps;
 
 export function Window({ children, className }: PropsWithChildren<Props>) {
   return (
