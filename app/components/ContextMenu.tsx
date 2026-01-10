@@ -1,3 +1,5 @@
+import { Button } from "./Button";
+
 type Props = {
   x: number;
   y: number;
@@ -12,15 +14,9 @@ export function ContextMenu({ x, y, visible }: Props) {
       className="fixed bg-[#36363a] p-4 rounded-2xl flex flex-col gap-3"
       style={{ left: x, top: y }}
     >
-      <button onClick={() => {}} type="button">
-        Change background...
-      </button>
-      <button onClick={() => {}} type="button">
-        Display settings
-      </button>
-      <button onClick={() => {}} type="button">
-        Settings
-      </button>
+      <Button onClick={() => {}}>Change background...</Button>
+      <Button onClick={() => {}}>Display settings</Button>
+      <Button onClick={() => {}}>Settings</Button>
     </div>
   );
 }
