@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 type Theme = "dark" | "light";
-type Background = "blobs" | "drool" | "map" | "morphogenesis";
+export type Background = "blobs" | "drool" | "map" | "morphogenesis";
 
 type BackgroundState = {
   background: Background;
