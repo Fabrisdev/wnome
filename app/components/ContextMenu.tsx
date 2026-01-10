@@ -1,5 +1,4 @@
 import { useBackground } from "@/hooks/useBackground";
-import type { Background } from "@/stores/background";
 import { Button } from "./Button";
 
 type Props = {
