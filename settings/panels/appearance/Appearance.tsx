@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/app/components/Button";
 import { Icon } from "@/ui/Icon";
+import { BackgroundOption } from "./BackgroundOption";
 
 export function Appearance() {
   return (
@@ -48,36 +49,8 @@ export function Appearance() {
         </Button>
       </div>
       <div className="bg-[#343437] p-4 rounded-xl grid grid-cols-3 place-items-center gap-4">
-        <Image
-          src="/settings/appearance/bg-option-blobs.png"
-          alt="Blobs option background"
-          width={144}
-          height={108}
-        />
-        <Image
-          src="/settings/appearance/bg-option-drool.png"
-          alt="Drool option background"
-          width={144}
-          height={108}
-        />
-        <Image
-          src="/settings/appearance/bg-option-drool.png"
-          alt="Drool option background"
-          width={144}
-          height={108}
-        />
-        <Image
-          src="/settings/appearance/bg-option-drool.png"
-          alt="Drool option background"
-          width={144}
-          height={108}
-        />
-        <Image
-          src="/settings/appearance/bg-option-drool.png"
-          alt="Drool option background"
-          width={144}
-          height={108}
-        />
+        <BackgroundOption background="blobs" />
+        <BackgroundOption background="drool" />
       </div>
     </div>
   );
