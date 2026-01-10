@@ -1,7 +1,11 @@
 import Image from "next/image";
 
 type Props = {
-  name: "network-server-symbolic";
+  name:
+    | "network-server-symbolic"
+    | "bluetooth-symbolic"
+    | "video-display-symbolic"
+    | "network-wireless-symbolic";
   theme?: "dark" | "light";
 };
 
