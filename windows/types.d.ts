@@ -1,6 +1,6 @@
 import type { Position } from "@/stores/windows";
 
-type WindowProps = {
+export type WindowProps = {
   id: string;
   position: Position;
 };
