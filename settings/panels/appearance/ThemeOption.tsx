@@ -3,19 +3,23 @@ import { type Theme, useBackgroundStore } from "@/stores/background";
 
 type Props = {
   theme: Theme;
+  name: string;
 };
 
-export function ThemeOption({ theme }: Props) {
+export function ThemeOption({ theme, name }: Props) {
   const setTheme = useBackgroundStore((state) => state.setTheme);
 
   return (
-    <button type="button" onClick={() => setTheme(theme)}>
-      <Image
-        src={`/settings/appearance/style-${theme}.png`}
-        alt="Default style"
-        width={170}
-        height={127}
-      />
-    </button>
+    <div>
+      <button type="button" onClick={() => setTheme(theme)}>
+        <Image
+          src={`/settings/appearance/style-${theme}.png`}
+          alt="Default style"
+          width={170}
+          height={127}
+        />
+      </button>
+      <p className="text-center">{name}</p>
+    </div>
   );
 }

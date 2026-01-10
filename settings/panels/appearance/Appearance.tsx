@@ -8,14 +8,8 @@ export function Appearance() {
     <div className="flex flex-col p-20 gap-3">
       <p className="font-bold">Style</p>
       <div className="bg-[#343437] flex p-5 gap-5 min-w-138 justify-center rounded-xl">
-        <div>
-          <ThemeOption theme="light" />
-          <p>Default</p>
-        </div>
-        <div>
-          <ThemeOption theme="dark" />
-          <p>Dark</p>
-        </div>
+        <ThemeOption theme="light" name="Default" />
+        <ThemeOption theme="dark" name="Dark" />
       </div>
       <div></div>
       <p className="font-bold">Accent Color</p>
