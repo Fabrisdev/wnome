@@ -4,8 +4,8 @@ type Theme = "dark" | "light";
 type Background = "blobs" | "drool" | "map" | "morphogenesis";
 
 type BackgroundState = {
-  background: string;
-  theme: "dark" | "light";
+  background: Background;
+  theme: Theme;
   setBackground: (background: Background) => void;
   setTheme: (theme: Theme) => void;
 };
