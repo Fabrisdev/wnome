@@ -22,7 +22,8 @@ type Props = {
     | "settings-mouse-symbolic"
     | "settings-printers-symbolic"
     | "settings-privacy-symbolic"
-    | "settings-system-symbolic";
+    | "settings-system-symbolic"
+    | "list-add-symbolic";
   theme?: "dark" | "light";
 };
 
