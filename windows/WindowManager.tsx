@@ -8,7 +8,7 @@ export function WindowManager() {
     if (window.app === "settings")
       return (
         <Settings
-          initialPanel="wi-fi"
+          initialPanel={window.options?.initialPanel ?? "wi-fi"}
           key={window.id}
           id={window.id}
           position={window.position}
