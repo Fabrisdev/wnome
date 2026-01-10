@@ -1,21 +1,19 @@
+"use client";
+
+import { ContextMenu } from "./components/ContextMenu";
+import { useContextMenu } from "./hooks/useContextMenu";
+
 export default function Home() {
+  const { menu, open, close } = useContextMenu();
+
   return (
     <main
       className="bg-[url(/backgrounds/blobs-d.svg)] h-svh bg-cover bg-center"
-      onContextMenu={handleContextMenu}
-      onClick={handleCloseContextMenu}
+      onContextMenu={open}
+      onClick={close}
       onKeyUp={() => {}}
     >
-      {menu.visible && (
-        <div
-          className="fixed bg-[#36363a] p-4 rounded-2xl flex flex-col gap-3"
-          style={{ left: menu.x, top: menu.y }}
-        >
-          <button>Change background...</button>
-          <button>Display settings</button>
-          <button>Settings</button>
-        </div>
-      )}
+      <ContextMenu visible={menu.visible} x={menu.x} y={menu.y} />
     </main>
   );
 }
