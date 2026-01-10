@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { Appearance } from "./windows/Appearance";
+import { Appearance } from "./panels/Appearance";
 
-type Window = "wi-fi" | "network" | "bluetooth" | "appearance";
+type Panel = "wi-fi" | "network" | "bluetooth" | "appearance";
 
 type Props = {
-  initialWindow: Window;
+  initialPanel: Panel;
 };
 
-export function Settings({ initialWindow }: Props) {
-  const [window, setWindow] = useState(initialWindow);
+export function Settings({ initialPanel }: Props) {
+  const [panel, setPanel] = useState(initialPanel);
   return (
     <div>
-      <p>Settings - {window}</p>
-      {window === "appearance" && <Appearance />}
+      <p>Settings - {panel}</p>
+      {panel === "appearance" && <Appearance />}
     </div>
   );
 }
