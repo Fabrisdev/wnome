@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/app/components/Button";
+import { Icon } from "@/ui/Icon";
 import type { WindowProps } from "@/windows/types";
 import { Window } from "@/windows/Window";
 import { Appearance } from "./panels/Appearance";
@@ -43,7 +44,12 @@ export function Settings({ initialPanel, id, position }: Props) {
       <div className="flex">
         <div className="flex flex-col bg-[#2e2e32] min-w-50">
           <Button onClick={() => setPanel("wi-fi")}>Wi-Fi</Button>
-          <Button onClick={() => setPanel("network")}>Network</Button>
+
+          <Button onClick={() => setPanel("network")}>
+            <Icon name="network-server-symbolic" />
+            Network
+          </Button>
+
           <Button onClick={() => setPanel("bluetooth")}>Bluetooth</Button>
           <Button onClick={() => setPanel("displays")}>Displays</Button>
           <Button onClick={() => setPanel("sound")}>Sound</Button>
