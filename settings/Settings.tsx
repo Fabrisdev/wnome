@@ -13,8 +13,7 @@ type Props = {
 export function Settings({ initialPanel, id, position }: Props) {
   const [panel, setPanel] = useState(initialPanel);
   return (
-    <Window id={id} position={position}>
-      <p>Settings - {panel}</p>
+    <Window id={id} position={position} title={`Settings - ${panel}`}>
       <div className="flex">
         <div className="flex flex-col">
           <Button onClick={() => setPanel("wi-fi")}>Wi-Fi</Button>

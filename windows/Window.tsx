@@ -4,9 +4,11 @@ import type { WindowProps } from "./types";
 
 type Props = {
   className?: string;
+  title: string;
 } & WindowProps;
 
 export function Window({
+  title,
   children,
   className,
   position,
@@ -51,10 +53,14 @@ export function Window({
         left: position.x,
         top: position.y,
       }}
-      onPointerMove={handlePointerMove}
-      onPointerDown={handlePointerDown}
-      onPointerUp={handlePointerUp}
     >
+      <p
+        onPointerMove={handlePointerMove}
+        onPointerDown={handlePointerDown}
+        onPointerUp={handlePointerUp}
+      >
+        {title}
+      </p>
       {children}
     </div>
   );
