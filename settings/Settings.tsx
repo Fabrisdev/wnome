@@ -43,16 +43,25 @@ export function Settings({ initialPanel, id, position }: Props) {
     >
       <div className="flex">
         <div className="flex flex-col bg-[#2e2e32] min-w-50 rounded-bl-2xl">
-          <Button onClick={() => setPanel("wi-fi")}>Wi-Fi</Button>
+          <Button onClick={() => setPanel("wi-fi")}>
+            <Icon name="network-wireless-symbolic" />
+            Wi-Fi
+          </Button>
 
           <Button onClick={() => setPanel("network")}>
             <Icon name="network-server-symbolic" />
             Network
           </Button>
 
-          <Button onClick={() => setPanel("bluetooth")}>Bluetooth</Button>
+          <Button onClick={() => setPanel("bluetooth")}>
+            <Icon name="bluetooth-symbolic" />
+            Bluetooth
+          </Button>
           <hr className="border-[#424247]" />
-          <Button onClick={() => setPanel("displays")}>Displays</Button>
+          <Button onClick={() => setPanel("displays")}>
+            <Icon name="video-display-symbolic" />
+            Displays
+          </Button>
           <Button onClick={() => setPanel("sound")}>Sound</Button>
           <Button onClick={() => setPanel("power")}>Power</Button>
           <Button onClick={() => setPanel("multitasking")}>Multitasking</Button>
