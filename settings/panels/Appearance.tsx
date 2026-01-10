@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Button } from "@/app/components/Button";
+import { Icon } from "@/ui/Icon";
 
 export function Appearance() {
   return (
@@ -38,7 +40,13 @@ export function Appearance() {
         <div className="rounded-full size-6 bg-[#6f8396]"></div>
       </div>
       <div></div>
-      <p className="font-bold">Background</p>
+      <div className="flex justify-between items-center">
+        <p className="font-bold">Background</p>
+        <Button onClick={() => {}} className="hover:bg-[#313135]! transition">
+          <Icon name="list-add-symbolic" />
+          <p className="font-bold">Add Picture...</p>
+        </Button>
+      </div>
     </div>
   );
 }
