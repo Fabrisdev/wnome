@@ -24,6 +24,21 @@ export function Appearance() {
           <p>Dark</p>
         </div>
       </div>
+      <div></div>
+      <p className="font-bold">Accent Color</p>
+      <div className="bg-[#343437] p-4 flex justify-center gap-4.5 rounded-xl">
+        <div className="rounded-full size-6 bg-[#3584e4]"></div>
+        <div className="rounded-full size-6 bg-[#2190a4]"></div>
+        <div className="rounded-full size-6 bg-[#3a944a]"></div>
+        <div className="rounded-full size-6 bg-[#c88800]"></div>
+        <div className="rounded-full size-6 bg-[#ed5b00]"></div>
+        <div className="rounded-full size-6 bg-[#e62d42]"></div>
+        <div className="rounded-full size-6 bg-[#d56199]"></div>
+        <div className="rounded-full size-6 bg-[#9141ac]"></div>
+        <div className="rounded-full size-6 bg-[#6f8396]"></div>
+      </div>
+      <div></div>
+      <p className="font-bold">Background</p>
     </div>
   );
 }
