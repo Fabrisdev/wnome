@@ -11,8 +11,8 @@ export function BackgroundOption({ background }: Props) {
   return (
     <button type="button" onClick={() => setBackground(background)}>
       <Image
-        src="/settings/appearance/bg-option-drool.png"
-        alt="Drool option background"
+        src={`/settings/appearance/bg-option-${background}.png`}
+        alt={`${background} option background`}
         width={144}
         height={108}
       />
