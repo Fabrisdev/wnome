@@ -5,7 +5,17 @@ type Props = {
     | "network-server-symbolic"
     | "bluetooth-symbolic"
     | "video-display-symbolic"
-    | "network-wireless-symbolic";
+    | "network-wireless-symbolic"
+    | "settings-appearance-symbolic"
+    | "settings-multitasking-symbolic"
+    | "settings-power-symbolic"
+    | "settings-sound-symbolic"
+    | "settings-applications-symbolic"
+    | "settings-notifications-symbolic"
+    | "system-search-symbolic"
+    | "settings-online-accounts-symbolic"
+    | "settings-sharing-symbolic"
+    | "settings-wellbeing-symbolic";
   theme?: "dark" | "light";
 };
 

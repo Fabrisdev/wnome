@@ -62,21 +62,47 @@ export function Settings({ initialPanel, id, position }: Props) {
             <Icon name="video-display-symbolic" />
             Displays
           </Button>
-          <Button onClick={() => setPanel("sound")}>Sound</Button>
-          <Button onClick={() => setPanel("power")}>Power</Button>
-          <Button onClick={() => setPanel("multitasking")}>Multitasking</Button>
-          <Button onClick={() => setPanel("appearance")}>Appearance</Button>
+          <Button onClick={() => setPanel("sound")}>
+            <Icon name="settings-sound-symbolic" />
+            Sound
+          </Button>
+          <Button onClick={() => setPanel("power")}>
+            <Icon name="settings-power-symbolic" />
+            Power
+          </Button>
+          <Button onClick={() => setPanel("multitasking")}>
+            <Icon name="settings-multitasking-symbolic" />
+            Multitasking
+          </Button>
+          <Button onClick={() => setPanel("appearance")}>
+            <Icon name="settings-appearance-symbolic" />
+            Appearance
+          </Button>
           <hr className="border-[#424247]" />
-          <Button onClick={() => setPanel("apps")}>Apps</Button>
+          <Button onClick={() => setPanel("apps")}>
+            <Icon name="settings-applications-symbolic" />
+            Apps
+          </Button>
           <Button onClick={() => setPanel("notifications")}>
+            <Icon name="settings-notifications-symbolic" />
             Notifications
           </Button>
-          <Button onClick={() => setPanel("search")}>Search</Button>
+          <Button onClick={() => setPanel("search")}>
+            <Icon name="system-search-symbolic" />
+            Search
+          </Button>
           <Button onClick={() => setPanel("online-accounts")}>
+            <Icon name="settings-online-accounts-symbolic" />
             Online Accounts
           </Button>
-          <Button onClick={() => setPanel("sharing")}>Sharing</Button>
-          <Button onClick={() => setPanel("wellbeing")}>Wellbeing</Button>
+          <Button onClick={() => setPanel("sharing")}>
+            <Icon name="settings-sharing-symbolic" />
+            Sharing
+          </Button>
+          <Button onClick={() => setPanel("wellbeing")}>
+            <Icon name="settings-wellbeing-symbolic" />
+            Wellbeing
+          </Button>
           <hr className="border-[#424247]" />
           <Button onClick={() => setPanel("mouse-&-touchpad")}>
             Mouse & Touchpad
