@@ -12,20 +12,17 @@ type Props = {
 export function Settings({ initialPanel }: Props) {
   const [panel, setPanel] = useState(initialPanel);
   return (
-    <Window className="flex">
-      <div>
-        <p>Settings - {panel}</p>
-        <ul>
-          <li>
-            <Button onClick={() => setPanel("wi-fi")}>Wi-Fi</Button>
-            <Button onClick={() => setPanel("network")}>Network</Button>
-            <Button onClick={() => setPanel("bluetooth")}>Bluetooth</Button>
-            <Button onClick={() => setPanel("appearance")}>Appearance</Button>
-          </li>
-        </ul>
+    <Window>
+      <p>Settings - {panel}</p>
+      <div className="flex">
+        <div className="flex flex-col">
+          <Button onClick={() => setPanel("wi-fi")}>Wi-Fi</Button>
+          <Button onClick={() => setPanel("network")}>Network</Button>
+          <Button onClick={() => setPanel("bluetooth")}>Bluetooth</Button>
+          <Button onClick={() => setPanel("appearance")}>Appearance</Button>
+        </div>
+        {panel === "appearance" && <Appearance />}
       </div>
-
-      {panel === "appearance" && <Appearance />}
     </Window>
   );
 }
