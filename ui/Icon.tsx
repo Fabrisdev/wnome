@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useBackgroundStore } from "@/stores/background";
 
 type Props = {
   name:
@@ -24,10 +25,10 @@ type Props = {
     | "settings-privacy-symbolic"
     | "settings-system-symbolic"
     | "list-add-symbolic";
-  theme?: "dark" | "light";
 };
 
-export function Icon({ name, theme }: Props) {
+export function Icon({ name }: Props) {
+  const theme = useBackgroundStore((state) => state.theme);
   return (
     <Image
       className={theme === "light" ? "" : "invert"}
