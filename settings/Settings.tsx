@@ -3,7 +3,7 @@ import { Button } from "@/app/components/Button";
 import { Icon } from "@/ui/Icon";
 import type { WindowProps } from "@/windows/types";
 import { Window } from "@/windows/Window";
-import { Appearance } from "./panels/Appearance";
+import { Appearance } from "./panels/appearance/Appearance";
 
 export type Panel =
   | "wi-fi"
