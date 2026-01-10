@@ -42,7 +42,7 @@ export function Settings({ initialPanel, id, position }: Props) {
       className="p-0!"
     >
       <div className="flex">
-        <div className="flex flex-col bg-[#2e2e32] min-w-50">
+        <div className="flex flex-col bg-[#2e2e32] min-w-50 rounded-bl-2xl">
           <Button onClick={() => setPanel("wi-fi")}>Wi-Fi</Button>
 
           <Button onClick={() => setPanel("network")}>
@@ -86,7 +86,7 @@ export function Settings({ initialPanel, id, position }: Props) {
           </Button>
           <Button onClick={() => setPanel("system")}>System</Button>
         </div>
-        <div className="bg-[#222226]">
+        <div className="bg-[#222226] rounded-br-2xl">
           {panel === "appearance" && <Appearance />}
         </div>
       </div>
