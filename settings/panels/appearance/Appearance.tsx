@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "@/app/components/Button";
 import { Icon } from "@/ui/Icon";
 import { BackgroundOption } from "./BackgroundOption";
+import { ThemeOption } from "./ThemeOption";
 
 export function Appearance() {
   return (
@@ -9,21 +10,11 @@ export function Appearance() {
       <p className="font-bold">Style</p>
       <div className="bg-[#343437] flex p-5 gap-5 min-w-138 justify-center rounded-xl">
         <div>
-          <Image
-            src="/settings/appearance/style-default.png"
-            alt="Default style"
-            width={170}
-            height={127}
-          />
+          <ThemeOption theme="light" />
           <p>Default</p>
         </div>
         <div>
-          <Image
-            src="/settings/appearance/style-dark.png"
-            alt="Dark style"
-            width={170}
-            height={127}
-          />
+          <ThemeOption theme="dark" />
           <p>Dark</p>
         </div>
       </div>
