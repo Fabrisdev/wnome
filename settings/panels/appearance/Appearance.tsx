@@ -1,5 +1,6 @@
 import { Button } from "@/app/components/Button";
 import { Icon } from "@/ui/Icon";
+import { PanelContainer } from "../PanelContainer";
 import { BackgroundOption } from "./BackgroundOption";
 import { ThemeOption } from "./ThemeOption";
 
@@ -7,13 +8,13 @@ export function Appearance() {
   return (
     <div className="flex flex-col p-20 gap-3">
       <p className="font-bold">Style</p>
-      <div className="bg-[#343437] flex p-5 gap-5 min-w-138 justify-center rounded-xl">
+      <PanelContainer className="p-5! flex gap-5 justify-center">
         <ThemeOption theme="light" name="Default" />
         <ThemeOption theme="dark" name="Dark" />
-      </div>
+      </PanelContainer>
       <div></div>
       <p className="font-bold">Accent Color</p>
-      <div className="bg-[#343437] p-4 flex justify-center gap-4.5 rounded-xl">
+      <PanelContainer className="flex justify-center gap-4.5">
         <div className="rounded-full size-6 bg-[#3584e4]"></div>
         <div className="rounded-full size-6 bg-[#2190a4]"></div>
         <div className="rounded-full size-6 bg-[#3a944a]"></div>
@@ -23,7 +24,7 @@ export function Appearance() {
         <div className="rounded-full size-6 bg-[#d56199]"></div>
         <div className="rounded-full size-6 bg-[#9141ac]"></div>
         <div className="rounded-full size-6 bg-[#6f8396]"></div>
-      </div>
+      </PanelContainer>
       <div></div>
       <div className="flex justify-between items-center">
         <p className="font-bold">Background</p>
@@ -32,10 +33,10 @@ export function Appearance() {
           <p className="font-bold">Add Picture...</p>
         </Button>
       </div>
-      <div className="bg-[#343437] p-4 rounded-xl grid grid-cols-3 place-items-center gap-4">
+      <PanelContainer className="grid grid-cols-3 place-items-center gap-4">
         <BackgroundOption background="blobs" />
         <BackgroundOption background="drool" />
-      </div>
+      </PanelContainer>
     </div>
   );
 }

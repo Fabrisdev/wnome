@@ -8,6 +8,7 @@ export function useColors() {
     },
     panel: {
       bg: theme === "dark" ? "#222226" : "#fafafb",
+      container: theme === "dark" ? "#343437" : "#ffffff",
     },
     text: theme === "dark" ? "#fff" : "#000",
   };
