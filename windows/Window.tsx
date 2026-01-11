@@ -4,11 +4,11 @@ import type { WindowProps } from "./types";
 
 type Props = {
   className?: string;
-  title: string;
+  header: React.ReactNode;
 } & WindowProps;
 
 export function Window({
-  title,
+  header,
   children,
   className,
   position,
@@ -56,13 +56,13 @@ export function Window({
       }}
       onPointerDown={() => focus(id)}
     >
-      <p
+      <div
         onPointerMove={handlePointerMove}
         onPointerDown={handlePointerDown}
         onPointerUp={handlePointerUp}
       >
-        {title}
-      </p>
+        {header}
+      </div>
       {children}
     </div>
   );
