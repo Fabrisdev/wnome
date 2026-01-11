@@ -15,6 +15,7 @@ export function Window({
   id,
 }: PropsWithChildren<Props>) {
   const move = useWindowsStore((state) => state.move);
+  const focus = useWindowsStore((state) => state.focus);
   const dragging = useRef(false);
   const last = useRef({ x: 0, y: 0 });
 
@@ -48,11 +49,12 @@ export function Window({
 
   return (
     <div
-      className={`fixed bg-[#36363a] p-1.5 rounded-2xl border border-[#424247] text-[15px] ${className}`}
+      className={`fixed bg-[#36363a] p-1.5 rounded-2xl border border-[#424247] text-[15px] ${className} select-none`}
       style={{
         left: position.x,
         top: position.y,
       }}
+      onPointerDown={() => focus(id)}
     >
       <p
         onPointerMove={handlePointerMove}
