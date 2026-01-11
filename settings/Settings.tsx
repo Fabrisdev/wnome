@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/app/components/Button";
+import { useWindowsStore } from "@/stores/windows";
 import { Icon } from "@/ui/Icon";
 import type { WindowProps } from "@/windows/types";
 import { Window } from "@/windows/Window";
@@ -37,6 +38,7 @@ type Props = {
 export function Settings({ initialPanel, id, position }: Props) {
   const [panel, setPanel] = useState(initialPanel);
   const colors = useColors();
+  const close = useWindowsStore((state) => state.kill);
   return (
     <Window
       id={id}
@@ -61,7 +63,8 @@ export function Settings({ initialPanel, id, position }: Props) {
           >
             <p className="font-bold">{capitalize(panel)}</p>
             <Button
-              onClick={() => {}}
+              noDrag
+              onClick={() => close(id)}
               className="rounded-full! p-1! bg-(--button-hover) absolute right-2"
             >
               <Icon name="window-close-symbolic" />
