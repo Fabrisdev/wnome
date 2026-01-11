@@ -52,7 +52,9 @@ export function Settings({ initialPanel, id, position }: Props) {
             <Button onClick={() => {}}>
               <Icon name="system-search-symbolic" />
             </Button>
-            <p className="font-bold">Settings</p>
+            <p className="font-bold" style={{ color: colors.text }}>
+              Settings
+            </p>
             <Button onClick={() => {}}>
               <Icon name="open-menu-symbolic" />
             </Button>

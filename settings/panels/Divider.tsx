@@ -2,5 +2,10 @@ import { useColors } from "../hooks/useColors";
 
 export function Divider() {
   const colors = useColors();
-  return <hr style={{ borderColor: colors.sidebar.divider }} />;
+  return (
+    <hr
+      style={{ borderColor: colors.sidebar.divider }}
+      className="duration-700"
+    />
+  );
 }
