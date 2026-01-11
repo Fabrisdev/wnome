@@ -15,7 +15,7 @@ export function Appearance() {
       </PanelContainer>
       <div></div>
       <p className="font-bold">Accent Color</p>
-      <PanelContainer className="flex justify-center gap-4.5">
+      <PanelContainer className="flex justify-center gap-4.5 items-center">
         <AccentColor color="#3584e4" />
         <AccentColor color="#2190a4" />
         <AccentColor color="#3a944a" />
