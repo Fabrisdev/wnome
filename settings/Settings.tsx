@@ -45,13 +45,13 @@ export function Settings({ initialPanel, id, position }: Props) {
       className="p-0!"
     >
       <div
-        className="flex"
+        className="flex duration-700"
         style={{
           color: colors.text,
         }}
       >
         <div
-          className="flex flex-col min-w-50 rounded-bl-2xl"
+          className="flex flex-col min-w-50 rounded-bl-2xl duration-700"
           style={{ backgroundColor: colors.sidebar.bg }}
         >
           <Button onClick={() => setPanel("wi-fi")}>
