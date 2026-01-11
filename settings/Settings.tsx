@@ -41,7 +41,34 @@ export function Settings({ initialPanel, id, position }: Props) {
     <Window
       id={id}
       position={position}
-      title={`Settings - ${panel}`}
+      header={
+        <div className="flex">
+          <div
+            className="min-w-50 h-10 rounded-tl-xl flex justify-around items-center"
+            style={{ backgroundColor: colors.sidebar.bg }}
+          >
+            <Button onClick={() => {}}>
+              <Icon name="system-search-symbolic" />
+            </Button>
+            <p className="font-bold">Settings</p>
+            <Button onClick={() => {}}>
+              <Icon name="open-menu-symbolic" />
+            </Button>
+          </div>
+          <div
+            className="w-full rounded-tr-xl flex justify-center items-center relative"
+            style={{ background: colors.panel.bg }}
+          >
+            <p className="font-bold">{capitalize(panel)}</p>
+            <Button
+              onClick={() => {}}
+              className="rounded-full! p-1! bg-(--button-hover) absolute right-2"
+            >
+              <Icon name="window-close-symbolic" />
+            </Button>
+          </div>
+        </div>
+      }
       className="p-0!"
     >
       <div
@@ -51,7 +78,7 @@ export function Settings({ initialPanel, id, position }: Props) {
         }}
       >
         <div
-          className="flex flex-col min-w-50 rounded-bl-2xl duration-700"
+          className="flex flex-col min-w-50 rounded-bl-2xl duration-700 p-2"
           style={{ backgroundColor: colors.sidebar.bg }}
         >
           <Button onClick={() => setPanel("wi-fi")}>
@@ -154,4 +181,8 @@ export function Settings({ initialPanel, id, position }: Props) {
       </div>
     </Window>
   );
+}
+
+function capitalize(text: string) {
+  return text[0].toUpperCase() + text.slice(1);
 }
