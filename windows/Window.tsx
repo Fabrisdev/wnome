@@ -21,8 +21,8 @@ export function Window({
 
   function handlePointerDown(event: React.PointerEvent) {
     const target = event.target as HTMLElement;
-    console.log(target);
     if (target.closest("[data-no-drag]")) return;
+
     dragging.current = true;
     last.current = {
       x: event.clientX,
