@@ -146,7 +146,7 @@ export function Settings({ initialPanel, id, position }: Props) {
           </Button>
         </div>
         <div
-          className="rounded-br-2xl"
+          className="rounded-br-2xl duration-700"
           style={{ backgroundColor: colors.panel.bg }}
         >
           {panel === "appearance" && <Appearance />}

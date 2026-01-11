@@ -13,7 +13,7 @@ export function PanelContainer({
 
   return (
     <div
-      className={`p-4 rounded-xl ${className} shadow`}
+      className={`p-4 rounded-xl ${className} shadow duration-700`}
       style={{ backgroundColor: colors.panel.container }}
     >
       {children}
