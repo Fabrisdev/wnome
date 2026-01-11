@@ -17,15 +17,11 @@ export function ThemeOption({ theme, name }: Props) {
       <button
         type="button"
         onClick={() => setTheme(theme)}
-        style={
-          currentTheme === theme
-            ? {
-                border: currentTheme === theme ? `3px solid ${color}` : "",
-                padding: "3px",
-                borderRadius: "12px",
-              }
-            : {}
-        }
+        style={{
+          border: `3px solid ${currentTheme === theme ? color : "transparent"}`,
+          padding: "3px",
+          borderRadius: "12px",
+        }}
       >
         <Image
           src={`/settings/appearance/style-${theme}.png`}
