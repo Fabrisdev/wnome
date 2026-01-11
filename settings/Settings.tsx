@@ -46,7 +46,7 @@ export function Settings({ initialPanel, id, position }: Props) {
       header={
         <div className="flex">
           <div
-            className="min-w-50 h-10 rounded-tl-xl flex justify-around items-center"
+            className="min-w-50 h-10 rounded-tl-xl flex justify-around items-center duration-700"
             style={{ backgroundColor: colors.sidebar.bg }}
           >
             <Button onClick={() => {}}>
@@ -58,10 +58,12 @@ export function Settings({ initialPanel, id, position }: Props) {
             </Button>
           </div>
           <div
-            className="w-full rounded-tr-xl flex justify-center items-center relative"
+            className="w-full rounded-tr-xl flex justify-center items-center relative duration-700"
             style={{ background: colors.panel.bg }}
           >
-            <p className="font-bold">{capitalize(panel)}</p>
+            <p className="font-bold" style={{ color: colors.text }}>
+              {capitalize(panel)}
+            </p>
             <Button
               noDrag
               onClick={() => close(id)}
