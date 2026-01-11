@@ -24,7 +24,8 @@ type Props = {
     | "settings-printers-symbolic"
     | "settings-privacy-symbolic"
     | "settings-system-symbolic"
-    | "list-add-symbolic";
+    | "list-add-symbolic"
+    | "check-plain-symbolic";
 };
 
 export function Icon({ name }: Props) {
