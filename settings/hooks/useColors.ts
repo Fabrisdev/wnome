@@ -6,6 +6,9 @@ export function useColors() {
     sidebar: {
       bg: theme === "dark" ? "#2e2e32" : "#ebebed",
       divider: theme === "dark" ? "#424247" : "#d2d2d4",
+      button: {
+        hover: theme === "dark" ? "#434347" : "#d8d8db",
+      },
     },
     panel: {
       bg: theme === "dark" ? "#222226" : "#fafafb",

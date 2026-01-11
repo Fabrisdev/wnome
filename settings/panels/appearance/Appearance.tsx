@@ -1,5 +1,5 @@
-import { Button } from "@/app/components/Button";
 import { Icon } from "@/ui/Icon";
+import { Button } from "../Button";
 import { PanelContainer } from "../PanelContainer";
 import { AccentColor } from "./AccentColor";
 import { BackgroundOption } from "./BackgroundOption";

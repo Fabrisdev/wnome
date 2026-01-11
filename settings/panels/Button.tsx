@@ -18,7 +18,7 @@ export function Button({
       type="button"
       onClick={onClick}
       className={`hover:bg-(--button-hover) p-2 rounded-xl text-left flex gap-3 ${className}`}
-      style={{ "--button-hover": colors.sidebar.button.hover } as CSSProperties}
+      style={{ "--button-hover": colors.panel.button.hover } as CSSProperties}
     >
       {children}
     </button>
