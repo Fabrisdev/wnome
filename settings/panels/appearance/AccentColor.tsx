@@ -10,7 +10,7 @@ export function AccentColor({ color }: Props) {
 
   return (
     <div
-      className="border-3 flex rounded-full justify-center items-center p-0.75"
+      className="border-3 flex rounded-full justify-center items-center p-0.75 duration-700"
       style={{
         borderColor: currentColor === color ? currentColor : "transparent",
       }}

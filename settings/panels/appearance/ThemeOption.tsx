@@ -17,6 +17,7 @@ export function ThemeOption({ theme, name }: Props) {
       <button
         type="button"
         onClick={() => setTheme(theme)}
+        className="duration-700"
         style={{
           border: `3px solid ${currentTheme === theme ? color : "transparent"}`,
           padding: "3px",
