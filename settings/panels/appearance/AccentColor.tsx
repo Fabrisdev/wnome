@@ -6,13 +6,19 @@ type Props = {
 
 export function AccentColor({ color }: Props) {
   const setColor = useAccentColorStore((state) => state.setColor);
+  const currentColor = useAccentColorStore((state) => state.color);
 
   return (
-    <button type="button" onClick={() => setColor(color)}>
-      <div
+    <div
+      className="border-3 flex rounded-full justify-center items-center p-0.75"
+      style={{ borderColor: currentColor }}
+    >
+      <button
+        type="button"
+        onClick={() => setColor(color)}
         className="rounded-full size-6"
         style={{ backgroundColor: color }}
-      ></div>
-    </button>
+      ></button>
+    </div>
   );
 }
