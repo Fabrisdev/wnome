@@ -25,7 +25,9 @@ type Props = {
     | "settings-privacy-symbolic"
     | "settings-system-symbolic"
     | "list-add-symbolic"
-    | "check-plain-symbolic";
+    | "check-plain-symbolic"
+    | "window-close-symbolic"
+    | "open-menu-symbolic";
 };
 
 export function Icon({ name }: Props) {
