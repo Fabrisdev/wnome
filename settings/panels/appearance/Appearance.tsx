@@ -29,7 +29,7 @@ export function Appearance() {
       <div></div>
       <div className="flex justify-between items-center">
         <p className="font-bold">Background</p>
-        <Button onClick={() => {}} className="hover:bg-[#313135]!">
+        <Button onClick={() => {}}>
           <Icon name="list-add-symbolic" />
           <p className="font-bold">Add Picture...</p>
         </Button>
