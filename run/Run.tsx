@@ -39,6 +39,8 @@ export function Run({ id, position }: WindowProps) {
         className="rounded-xl p-2 w-full outline-none"
         value={command}
         onChange={(event) => setCommand(event.target.value)}
+        // biome-ignore lint/a11y/noAutofocus: This is how GNOME does it.
+        autoFocus
         style={{
           border: `2px solid ${accent}`,
           backgroundColor: colors.input,
