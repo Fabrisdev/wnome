@@ -42,6 +42,7 @@ export function Terminal({ id, position }: WindowProps) {
       }
     >
       <OneTerminal
+        prompt="[user@linux-pc {cwd}]$ "
         fileStructure={{ kind: "directory", entries: {} }}
         windowChrome={{ style: "none" }}
         theme={{ backgroundColor: colors.terminal.bg }}
