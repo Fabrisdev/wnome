@@ -8,14 +8,14 @@ import { Header } from "./Header";
 export function Terminal({ id, position }: WindowProps) {
   const colors = useColors();
   const fs = useFileSystemStore((state) => state.fs);
-  const createFile = useFileSystemStore((state) => state.createFile);
+  const add = useFileSystemStore((state) => state.add);
 
   const commands: ExtraCommands = {
     touch: {
       run: (args) => {
         const path = args[0];
-        createFile(path);
-        return `Created file ${path}`;
+        add(path, "file");
+        return `created file ${path}`;
       },
     },
   };
