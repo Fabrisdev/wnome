@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAccentColorStore } from "@/stores/accent-color";
-import { useWindowsStore } from "@/stores/windows";
+import { isAppName, useWindowsStore } from "@/stores/windows";
 import type { WindowProps } from "@/windows/types";
 import { Window } from "@/windows/Window";
 
@@ -8,14 +8,22 @@ export function Run({ id, position }: WindowProps) {
   const colors = { bg: "#36363a", input: "#4b4d54", hint: "#c1c1c1" };
   const accent = useAccentColorStore((state) => state.color);
   const kill = useWindowsStore((state) => state.kill);
+  const spawn = useWindowsStore((state) => state.spawn);
+  const [command, setCommand] = useState("");
 
   useEffect(() => {
     function handleKeypress(event: KeyboardEvent) {
       if (event.key === "Escape") kill(id);
+      if (event.key === "Enter") {
+        if (isAppName(command)) {
+          spawn(command);
+          kill(id);
+        }
+      }
     }
     document.addEventListener("keyup", handleKeypress);
     return () => document.removeEventListener("keyup", handleKeypress);
-  }, [id, kill]);
+  }, [id, command, kill, spawn]);
 
   return (
     <Window
@@ -29,6 +37,8 @@ export function Run({ id, position }: WindowProps) {
       <input
         type="text"
         className="rounded-xl p-2 w-full outline-none"
+        value={command}
+        onChange={(event) => setCommand(event.target.value)}
         style={{
           border: `2px solid ${accent}`,
           backgroundColor: colors.input,
