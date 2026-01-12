@@ -12,6 +12,7 @@ export function Terminal({ id, position }: WindowProps) {
       position={position}
       className="p-0!"
       header={<Header id={id} />}
+      style={{ backgroundColor: colors.terminal.header }}
     >
       <OneTerminal
         prompt="[user@linux-pc {cwd}]$"

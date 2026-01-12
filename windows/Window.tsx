@@ -1,10 +1,11 @@
-import { type PropsWithChildren, useRef } from "react";
+import { type CSSProperties, type PropsWithChildren, useRef } from "react";
 import { useWindowsStore } from "@/stores/windows";
 import type { WindowProps } from "./types";
 
 type Props = {
   className?: string;
   header: React.ReactNode;
+  style?: CSSProperties;
 } & WindowProps;
 
 export function Window({
@@ -13,6 +14,7 @@ export function Window({
   className,
   position,
   id,
+  style,
 }: PropsWithChildren<Props>) {
   const move = useWindowsStore((state) => state.move);
   const focus = useWindowsStore((state) => state.focus);
@@ -56,6 +58,7 @@ export function Window({
       style={{
         left: position.x,
         top: position.y,
+        ...style,
       }}
       onPointerDown={() => focus(id)}
     >
