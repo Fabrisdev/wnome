@@ -17,12 +17,20 @@ export function Terminal({ id, position }: WindowProps) {
         add(path, "file");
         return "";
       },
+      completion: {
+        fileScope: "directories",
+        mode: "paths",
+      },
     },
     mkdir: {
       run: (args) => {
         const path = args[0];
         add(path, "directory");
         return "";
+      },
+      completion: {
+        fileScope: "directories",
+        mode: "paths",
       },
     },
   };
