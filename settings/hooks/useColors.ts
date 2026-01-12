@@ -20,6 +20,7 @@ export function useColors() {
     text: theme === "dark" ? "#fff" : "#000",
     terminal: {
       header: theme === "dark" ? "#2e2e32" : "#fff",
+      headerBorder: theme === "dark" ? "#141418" : "#e5e5e5",
       bg: theme === "dark" ? "#1c1c1f" : "#fff",
       text: theme === "dark" ? "#fff" : "#000",
     },

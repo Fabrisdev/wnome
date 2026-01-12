@@ -12,13 +12,18 @@ export function Header({ id }: Props) {
   const colors = useColors();
   return (
     <div
-      className="flex justify-center items-center h-10 relative rounded-2xl"
-      style={{ backgroundColor: colors.terminal.header }}
+      className="flex justify-center items-center h-10 relative rounded-2xl border rounded-b-none shadow-xs"
+      style={{
+        backgroundColor: colors.terminal.header,
+        borderColor: colors.terminal.headerBorder,
+      }}
     >
       <Button noDrag onClick={() => {}} className="absolute left-2">
         <Icon name="system-search-symbolic" />
       </Button>
-      <p className="font-bold">user@linux-pc</p>
+      <p className="font-bold" style={{ color: colors.text }}>
+        user@linux-pc
+      </p>
       <div className="flex justify-center items-center gap-2 absolute right-2">
         <Button noDrag onClick={() => {}}>
           <Icon name="tab-new-symbolic" />
