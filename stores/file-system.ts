@@ -4,14 +4,14 @@ import { persist } from "zustand/middleware";
 
 type FileSystemState = {
   fs: DirectoryNode;
-  createFile: (path: string, contents?: string) => void;
+  add: (path: string, kind: "directory" | "file") => void;
 };
 
 export const useFileSystemStore = create<FileSystemState>()(
   persist(
     (set) => ({
       fs: { kind: "directory", entries: {} },
-      createFile: (path, contents = "") =>
+      add: (path, kind) =>
         set((state) => {
           const parts = path.split("/");
           const fileName = parts.pop();
@@ -33,11 +33,19 @@ export const useFileSystemStore = create<FileSystemState>()(
             current.entries[part] = newDirectory;
             current = newDirectory;
           }
-          current.entries[fileName] = {
-            kind: "file",
-            content: contents,
-            fileType: "text",
-          };
+          if (kind === "directory") {
+            current.entries[fileName] = {
+              kind,
+              entries: {},
+            };
+          } else {
+            current.entries[fileName] = {
+              kind,
+              content: "",
+              fileType: "text",
+            };
+          }
+
           return { fs };
         }),
     }),
