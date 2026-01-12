@@ -15,7 +15,14 @@ export function Terminal({ id, position }: WindowProps) {
       run: (args) => {
         const path = args[0];
         add(path, "file");
-        return `created file ${path}`;
+        return "";
+      },
+    },
+    mkdir: {
+      run: (args) => {
+        const path = args[0];
+        add(path, "directory");
+        return "";
       },
     },
   };
