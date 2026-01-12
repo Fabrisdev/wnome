@@ -1,5 +1,7 @@
+import { Run } from "@/run/Run";
 import { Settings } from "@/settings/Settings";
 import { useWindowsStore } from "@/stores/windows";
+import { Terminal } from "@/terminal/Terminal";
 
 export function WindowManager() {
   const windows = useWindowsStore((state) => state.windows);
@@ -14,6 +16,14 @@ export function WindowManager() {
           position={window.position}
         />
       );
+    if (window.app === "run") {
+      return <Run key={window.id} id={window.id} position={window.position} />;
+    }
+    if (window.app === "terminal") {
+      return (
+        <Terminal key={window.id} id={window.id} position={window.position} />
+      );
+    }
     return null;
   });
 }
