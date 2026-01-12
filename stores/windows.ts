@@ -32,20 +32,27 @@ type WindowsState = {
 export const useWindowsStore = create<WindowsState>((set) => ({
   windows: [],
   spawn: (app, options) =>
-    set((state) => ({
-      windows: [
-        ...state.windows,
-        {
-          id: crypto.randomUUID(),
-          app,
-          position: {
-            x: 0,
-            y: 0,
+    set((state) => {
+      const windows = state.windows;
+      if (app === "run") {
+        const window = windows.find((window) => window.app === "run");
+        if (window !== undefined) return state;
+      }
+      return {
+        windows: [
+          ...state.windows,
+          {
+            id: crypto.randomUUID(),
+            app,
+            position: {
+              x: 0,
+              y: 0,
+            },
+            options,
           },
-          options,
-        },
-      ],
-    })),
+        ],
+      };
+    }),
   kill: (id) =>
     set((state) => ({
       windows: state.windows.filter((window) => window.id !== id),
