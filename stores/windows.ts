@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import type { Panel } from "@/settings/Settings";
 
-type App = "settings";
+type App = "settings" | "terminal";
 export type Position = {
   x: number;
   y: number;
@@ -17,6 +17,7 @@ type SpawnOptions = {
   settings?: {
     initialPanel: Panel;
   };
+  terminal?: never;
 };
 
 type WindowsState = {
