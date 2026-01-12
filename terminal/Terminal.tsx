@@ -1,11 +1,25 @@
-import { Terminal as OneTerminal } from "one-terminal";
+import { type ExtraCommands, Terminal as OneTerminal } from "one-terminal";
 import { useColors } from "@/settings/hooks/useColors";
+import { useFileSystemStore } from "@/stores/file-system";
 import type { WindowProps } from "@/windows/types";
 import { Window } from "@/windows/Window";
 import { Header } from "./Header";
 
 export function Terminal({ id, position }: WindowProps) {
   const colors = useColors();
+  const fs = useFileSystemStore((state) => state.fs);
+  const createFile = useFileSystemStore((state) => state.createFile);
+
+  const commands: ExtraCommands = {
+    touch: {
+      run: (args) => {
+        const path = args[0];
+        createFile(path);
+        return `Created file ${path}`;
+      },
+    },
+  };
+
   return (
     <Window
       id={id}
@@ -16,7 +30,8 @@ export function Terminal({ id, position }: WindowProps) {
     >
       <OneTerminal
         prompt="[user@linux-pc {cwd}]$"
-        fileStructure={{ kind: "directory", entries: {} }}
+        fileStructure={fs}
+        extraCommands={commands}
         windowChrome={{ style: "none" }}
         theme={{
           backgroundColor: colors.terminal.bg,
