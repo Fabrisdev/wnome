@@ -1,4 +1,5 @@
 import { type CSSProperties, type PropsWithChildren, useRef } from "react";
+import { useColors } from "@/settings/hooks/useColors";
 import { useWindowsStore } from "@/stores/windows";
 import type { WindowProps } from "./types";
 
@@ -20,6 +21,7 @@ export function Window({
   const focus = useWindowsStore((state) => state.focus);
   const dragging = useRef(false);
   const last = useRef({ x: 0, y: 0 });
+  const colors = useColors();
 
   function handlePointerDown(event: React.PointerEvent) {
     const target = event.target as HTMLElement;
@@ -54,10 +56,11 @@ export function Window({
 
   return (
     <div
-      className={`fixed bg-[#36363a] p-1.5 rounded-2xl border border-[#424247] text-[15px] ${className} select-none`}
+      className={`fixed bg-[#36363a] p-1.5 rounded-2xl border text-[15px] ${className} select-none`}
       style={{
         left: position.x,
         top: position.y,
+        borderColor: colors.window.border,
         ...style,
       }}
       onPointerDown={() => focus(id)}

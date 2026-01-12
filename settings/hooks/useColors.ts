@@ -24,5 +24,8 @@ export function useColors() {
       bg: theme === "dark" ? "#1c1c1f" : "#fff",
       text: theme === "dark" ? "#fff" : "#000",
     },
+    window: {
+      border: theme === "dark" ? "#424247" : "#c4c4c5",
+    },
   };
 }
