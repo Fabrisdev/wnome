@@ -34,7 +34,7 @@ export function Run({ id, position }: WindowProps) {
       id={id}
       position={position}
       header={null}
-      className="fixed top-1/2! left-1/2! -translate-x-1/2! -translate-y-1/2! p-7.5 min-w-100 shadow-[0_0_0_9999px_rgba(0,0,0,0.5)]"
+      className="fixed top-1/2! left-1/2! -translate-x-1/2! -translate-y-1/2! p-7.5 min-w-100 shadow-[0_0_0_9999px_rgba(0,0,0,0.5)] bg-[#36363a]! border-[#424247]!"
     >
       <p className="font-bold text-center text-[20px] p-4">Run a Command</p>
 
