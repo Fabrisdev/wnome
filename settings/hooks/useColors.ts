@@ -21,6 +21,7 @@ export function useColors() {
     terminal: {
       header: theme === "dark" ? "#2e2e32" : "#fff",
       bg: theme === "dark" ? "#1c1c1f" : "#fff",
+      text: theme === "dark" ? "#fff" : "#000",
     },
   };
 }

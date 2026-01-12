@@ -17,7 +17,11 @@ export function Terminal({ id, position }: WindowProps) {
         prompt="[user@linux-pc {cwd}]$"
         fileStructure={{ kind: "directory", entries: {} }}
         windowChrome={{ style: "none" }}
-        theme={{ backgroundColor: colors.terminal.bg }}
+        theme={{
+          backgroundColor: colors.terminal.bg,
+          textColor: colors.terminal.text,
+          promptColor: colors.terminal.text,
+        }}
         className="min-w-200 min-h-150 one-terminal"
       />
     </Window>
