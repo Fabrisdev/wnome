@@ -38,7 +38,7 @@ export const useFileSystemStore = create<FileSystemState>()(
             content: contents,
             fileType: "text",
           };
-          return state;
+          return { fs };
         }),
     }),
     {
