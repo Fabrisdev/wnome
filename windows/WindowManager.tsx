@@ -1,10 +1,11 @@
+import { useShallow } from "zustand/shallow";
 import { Run } from "@/run/Run";
 import { Settings } from "@/settings/Settings";
 import { useWindowsStore } from "@/stores/windows";
 import { Terminal } from "@/terminal/Terminal";
 
 export function WindowManager() {
-  const windows = useWindowsStore((state) => state.windows);
+  const windows = useWindowsStore(useShallow((state) => state.windows));
 
   return windows.map((window) => {
     if (window.app === "settings")
