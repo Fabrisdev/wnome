@@ -42,9 +42,8 @@ export const useWindowsStore = create<WindowsState>((set) => ({
   windows: [],
   spawn: (app, options) =>
     set((state) => {
-      const windows = state.windows;
       if (app === "run") {
-        const window = windows.find((window) => window.app === "run");
+        const window = state.windows.find((window) => window.app === "run");
         if (window !== undefined) return state;
       }
       return {
