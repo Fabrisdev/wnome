@@ -10,15 +10,19 @@ export function Run({ id, position }: WindowProps) {
   const kill = useWindowsStore((state) => state.kill);
   const spawn = useWindowsStore((state) => state.spawn);
   const [command, setCommand] = useState("");
+  const [hint, setHint] = useState("Press ESC to close");
 
   useEffect(() => {
     function handleKeypress(event: KeyboardEvent) {
+      setHint("Press ESC to close");
       if (event.key === "Escape") kill(id);
       if (event.key === "Enter") {
         if (isAppName(command)) {
           spawn(command);
           kill(id);
+          return;
         }
+        setHint("Command not found");
       }
     }
     document.addEventListener("keyup", handleKeypress);
@@ -47,7 +51,7 @@ export function Run({ id, position }: WindowProps) {
         }}
       />
       <p style={{ color: colors.hint }} className="text-xs pt-2">
-        Press ESC to close
+        {hint}
       </p>
     </Window>
   );
