@@ -1,7 +1,16 @@
 import { create } from "zustand";
 import type { Panel } from "@/settings/Settings";
 
-type App = "settings" | "terminal" | "run";
+const apps = ["settings", "terminal", "run"] as const;
+type App = (typeof apps)[number];
+
+export function isAppName(name: string): name is App {
+  for (const app of apps) {
+    if (app === name) return true;
+  }
+  return false;
+}
+
 export type Position = {
   x: number;
   y: number;
