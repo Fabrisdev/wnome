@@ -27,13 +27,15 @@ type Props = {
     | "list-add-symbolic"
     | "check-plain-symbolic"
     | "window-close-symbolic"
-    | "open-menu-symbolic";
+    | "open-menu-symbolic"
+    | "tab-new-symbolic";
 };
 
 export function Icon({ name }: Props) {
   const theme = useBackgroundStore((state) => state.theme);
   return (
     <Image
+      draggable={false}
       className={theme === "light" ? "" : "invert"}
       src={`/icons/${name}.svg`}
       alt={`${name} icon`}
