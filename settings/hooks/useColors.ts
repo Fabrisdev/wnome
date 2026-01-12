@@ -26,6 +26,7 @@ export function useColors() {
     },
     window: {
       border: theme === "dark" ? "#424247" : "#c4c4c5",
+      bg: theme === "dark" ? "#36363a" : "#fff",
     },
   };
 }

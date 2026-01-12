@@ -56,11 +56,12 @@ export function Window({
 
   return (
     <div
-      className={`fixed bg-[#36363a] p-1.5 rounded-2xl border text-[15px] ${className} select-none`}
+      className={`fixed p-1.5 rounded-2xl border text-[15px] ${className} select-none`}
       style={{
         left: position.x,
         top: position.y,
         borderColor: colors.window.border,
+        backgroundColor: colors.window.bg,
         ...style,
       }}
       onPointerDown={() => focus(id)}
