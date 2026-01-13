@@ -5,9 +5,11 @@ import { Icon } from "@/ui/Icon";
 
 type Props = {
   id: string;
+  url: string;
+  changeUrl: (url: string) => void;
 };
 
-export function Header({ id }: Props) {
+export function Header({ id, changeUrl, url }: Props) {
   const kill = useWindowsStore((state) => state.kill);
   const colors = useColors();
   return (
@@ -21,9 +23,7 @@ export function Header({ id }: Props) {
       <Button noDrag onClick={() => {}} className="absolute left-2">
         <Icon name="system-search-symbolic" />
       </Button>
-      <p className="font-bold" style={{ color: colors.text }}>
-        Browser
-      </p>
+      <input value={url} onChange={(event) => changeUrl(event.target.value)} />
       <div className="flex justify-center items-center gap-2 absolute right-2">
         <Button noDrag onClick={() => {}}>
           <Icon name="tab-new-symbolic" />
