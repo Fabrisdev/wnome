@@ -12,6 +12,7 @@ export function Terminal({ id, position }: WindowProps) {
   const fs = useFileSystemStore((state) => state.fs);
   const add = useFileSystemStore((state) => state.add);
   const windows = useWindowsStore((state) => state.windows);
+  const kill = useWindowsStore((state) => state.kill);
 
   const commands: ExtraCommands = {
     touch: {
@@ -52,6 +53,17 @@ export function Terminal({ id, position }: WindowProps) {
           output.push(`${window.id.padEnd(totalPadding)}${window.app}`);
         });
         return output.join("\n");
+      },
+    },
+    killall: {
+      run: (args) => {
+        const type = args[0];
+        console.log(type);
+        const windowsToKill = windows.filter((window) => window.app === type);
+        windowsToKill.forEach((window) => {
+          kill(window.id);
+        });
+        return windowsToKill.map((window) => window.id).join("\n");
       },
     },
   };
