@@ -1,20 +1,20 @@
 export function randomNeofetch() {
-  return `                  -\`                    user@linux-pc
+  return `                  -\`                     user@linux-pc
                  .o+\`                    ----------
-                \`ooo/                    Host: B450M-HDV R4.0
-               \`+oooo:                   Kernel: Linux 6.18.3-arch1-1
-              \`+oooooo:                  Uptime: 1 day, 15 hours, 1 min
-              -+oooooo+:                 Shell: bash 5.3.9
-            \`/:-:++oooo+:                Display (T238F165): 1920x1080 in 24", 165 Hz []
-           \`/++++/+++++++:               DE: GNOME 49.2
+                \`ooo/                    Host: *some beast*
+               \`+oooo:                   Kernel: Linux 13.18.9-arch1-1
+              \`+oooooo:                  Uptime: 2 hours
+              -+oooooo+:                 Shell: bash 15.89.7
+            \`/:-:++oooo+:                Display (T238F165): 1920x1080 in 24", 999 Hz []
+           \`/++++/+++++++:               DE: WNOME
           \`/++++++++++++++:              WM: Mutter (Wayland)
          \`/+++ooooooooooooo/\`            WM Theme: Adwaita
         ./ooosssso++osssssso+\`           Icons: Adwaita [GTK2/3/4]
-       .oossssso-\`\`\`\`/ossssss+\`          Terminal: alacritty 0.16.1
+       .oossssso-\`\`\`\`/ossssss+\`          Terminal: wnome-terminal 3.58.1-1
       -osssssso.      :ssssssso.         Terminal Font: monospace (11.25pt, Regular)
-     :osssssss/        osssso+++.        CPU: AMD Ryzen 5 5600X (12) @ 4.65 GHz
-    /ossssssss/        +ssssooo/-        GPU: AMD Radeon RX 5700 XT [Discrete]
-  \`/ossssso+/:-        -:/+osssso+-      Memory: 12.38 GiB / 62.72 GiB (20%)
+     :osssssss/        osssso+++.        CPU: AMD Ryzen 12 @ 10.4 GHz
+    /ossssssss/        +ssssooo/-        GPU: AMD Radeon RTX 6090 [Discrete]
+  \`/ossssso+/:-        -:/+osssso+-      Memory: 123 GiB / 999 GiB (20%)
  \`+sso+:-\`                 \`.-/+oso:
 \`++:.                           \`-/+/
 .\`                                 \`/\``;
