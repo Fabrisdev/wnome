@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import type { Panel } from "@/settings/Settings";
 
-const apps = ["settings", "terminal", "run"] as const;
+const apps = ["settings", "terminal", "run", "browser"] as const;
 type App = (typeof apps)[number];
 
 export function isAppName(name: string): name is App {
@@ -16,11 +16,13 @@ export type Position = {
   y: number;
 };
 type Window = {
-  id: string;
-  app: App;
-  position: Position;
-  options: SpawnOptions[App];
-};
+  [K in App]: {
+    id: string;
+    app: K;
+    position: Position;
+    options: SpawnOptions[K];
+  };
+}[App];
 
 type SpawnOptions = {
   settings?: {
@@ -28,6 +30,9 @@ type SpawnOptions = {
   };
   terminal?: never;
   run?: never;
+  browser?: {
+    initialUrl: string;
+  };
 };
 
 type WindowsState = {
@@ -46,19 +51,17 @@ export const useWindowsStore = create<WindowsState>((set) => ({
         const window = state.windows.find((window) => window.app === "run");
         if (window !== undefined) return state;
       }
+      const newWindow = {
+        id: crypto.randomUUID(),
+        app,
+        position: {
+          x: 0,
+          y: 0,
+        },
+        options,
+      } as Window;
       return {
-        windows: [
-          ...state.windows,
-          {
-            id: crypto.randomUUID(),
-            app,
-            position: {
-              x: 0,
-              y: 0,
-            },
-            options,
-          },
-        ],
+        windows: [...state.windows, newWindow],
       };
     }),
   kill: (id) =>

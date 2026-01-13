@@ -1,4 +1,5 @@
 import { useShallow } from "zustand/shallow";
+import { Browser } from "@/browser/Browser";
 import { Run } from "@/run/Run";
 import { Settings } from "@/settings/Settings";
 import { useWindowsStore } from "@/stores/windows";
@@ -23,6 +24,17 @@ export function WindowManager() {
     if (window.app === "terminal") {
       return (
         <Terminal key={window.id} id={window.id} position={window.position} />
+      );
+    }
+    if (window.app === "browser") {
+      window.app;
+      return (
+        <Browser
+          key={window.id}
+          id={window.id}
+          position={window.position}
+          initialUrl={window.options?.initialUrl ?? "https://google.com"}
+        />
       );
     }
     return null;
