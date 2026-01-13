@@ -3,6 +3,7 @@ import { useColors } from "@/settings/hooks/useColors";
 import { useFileSystemStore } from "@/stores/file-system";
 import type { WindowProps } from "@/windows/types";
 import { Window } from "@/windows/Window";
+import { randomNeofetch } from "./commands/neofetch";
 import { Header } from "./Header";
 
 export function Terminal({ id, position }: WindowProps) {
@@ -31,6 +32,11 @@ export function Terminal({ id, position }: WindowProps) {
       completion: {
         fileScope: "directories",
         mode: "paths",
+      },
+    },
+    neofetch: {
+      run: (args) => {
+        return randomNeofetch();
       },
     },
   };
