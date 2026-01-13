@@ -26,7 +26,9 @@ export function ContextMenu({ x, y, visible }: Props) {
         Change background...
       </Button>
       <hr className="border-[#424247]" />
-      <Button onClick={() => {}}>Display settings</Button>
+      <Button onClick={() => spawn("settings", { initialPanel: "displays" })}>
+        Display settings
+      </Button>
       <Button onClick={() => spawn("settings")}>Settings</Button>
     </div>
   );
