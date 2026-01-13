@@ -1,6 +1,7 @@
 import { type ExtraCommands, Terminal as OneTerminal } from "one-terminal";
 import { useColors } from "@/settings/hooks/useColors";
 import { useFileSystemStore } from "@/stores/file-system";
+import { useWindowsStore } from "@/stores/windows";
 import type { WindowProps } from "@/windows/types";
 import { Window } from "@/windows/Window";
 import { fakeNeofetch } from "./commands/neofetch";
@@ -10,6 +11,7 @@ export function Terminal({ id, position }: WindowProps) {
   const colors = useColors();
   const fs = useFileSystemStore((state) => state.fs);
   const add = useFileSystemStore((state) => state.add);
+  const windows = useWindowsStore((state) => state.windows);
 
   const commands: ExtraCommands = {
     touch: {
@@ -37,6 +39,19 @@ export function Terminal({ id, position }: WindowProps) {
     neofetch: {
       run: (_) => {
         return fakeNeofetch();
+      },
+    },
+    ps: {
+      run: (_) => {
+        const output = [];
+        const PID_WIDTH = 36;
+        const SPACING = 2;
+        const totalPadding = PID_WIDTH + SPACING;
+        output.push(`${"PID".padEnd(totalPadding)}TYPE`);
+        windows.forEach((window) => {
+          output.push(`${window.id.padEnd(totalPadding)}${window.app}`);
+        });
+        return output.join("\n");
       },
     },
   };
