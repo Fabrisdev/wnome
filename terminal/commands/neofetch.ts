@@ -1,4 +1,4 @@
-export function randomNeofetch() {
+export function fakeNeofetch() {
   return `                  -\`                     user@linux-pc
                  .o+\`                    ----------
                 \`ooo/                    Host: *some beast*
