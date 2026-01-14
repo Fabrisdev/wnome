@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { useColors } from "@/settings/hooks/useColors";
 import type { WindowProps } from "@/windows/types";
 import { Window } from "@/windows/Window";
 import { Header } from "./Header";
+import { useUrl } from "./hooks/useUrl";
 import { WebFrame } from "./WebFrame";
 
 type Props = {
@@ -11,7 +11,8 @@ type Props = {
 
 export function Browser({ id, position, initialUrl, zPos }: Props) {
   const colors = useColors();
-  const [url, setUrl] = useState(initialUrl);
+  const { url, updateUrl, goBack, goNext, canGoBack, canGoNext } =
+    useUrl(initialUrl);
 
   return (
     <Window
@@ -19,7 +20,17 @@ export function Browser({ id, position, initialUrl, zPos }: Props) {
       id={id}
       position={position}
       className="p-0!"
-      header={<Header id={id} changeUrl={setUrl} url={url} />}
+      header={
+        <Header
+          id={id}
+          changeUrl={updateUrl}
+          url={url}
+          goNext={goNext}
+          goBack={goBack}
+          canGoBack={canGoBack}
+          canGoNext={canGoNext}
+        />
+      }
       style={{ backgroundColor: colors.terminal.header }}
     >
       <WebFrame url={url} />

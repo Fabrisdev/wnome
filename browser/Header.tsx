@@ -7,9 +7,21 @@ type Props = {
   id: string;
   url: string;
   changeUrl: (url: string) => void;
+  goBack: () => void;
+  goNext: () => void;
+  canGoBack: boolean;
+  canGoNext: boolean;
 };
 
-export function Header({ id, changeUrl, url }: Props) {
+export function Header({
+  id,
+  changeUrl,
+  url,
+  canGoBack,
+  canGoNext,
+  goBack,
+  goNext,
+}: Props) {
   const kill = useWindowsStore((state) => state.kill);
   const colors = useColors();
   return (
@@ -20,9 +32,17 @@ export function Header({ id, changeUrl, url }: Props) {
         borderColor: colors.terminal.headerBorder,
       }}
     >
-      <Button noDrag onClick={() => {}} className="absolute left-2">
-        <Icon name="system-search-symbolic" />
-      </Button>
+      <div className="absolute left-2 flex justify-center items-center gap-2">
+        <Button noDrag onClick={goBack}>
+          <Icon name="go-previous-symbolic" />
+        </Button>
+        <Button noDrag onClick={goNext}>
+          <Icon name="go-next-symbolic" />
+        </Button>
+        <Button noDrag onClick={() => {}}>
+          <Icon name="tab-new-symbolic" />
+        </Button>
+      </div>
       <input
         data-no-drag
         value={url}
@@ -34,9 +54,6 @@ export function Header({ id, changeUrl, url }: Props) {
         }}
       />
       <div className="flex justify-center items-center gap-2 absolute right-2">
-        <Button noDrag onClick={() => {}}>
-          <Icon name="tab-new-symbolic" />
-        </Button>
         <Button noDrag onClick={() => {}}>
           <Icon name="open-menu-symbolic" />
         </Button>
