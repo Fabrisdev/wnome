@@ -28,7 +28,9 @@ type Props = {
     | "check-plain-symbolic"
     | "window-close-symbolic"
     | "open-menu-symbolic"
-    | "tab-new-symbolic";
+    | "tab-new-symbolic"
+    | "go-next-symbolic"
+    | "go-previous-symbolic";
 };
 
 export function Icon({ name }: Props) {
