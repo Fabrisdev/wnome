@@ -9,18 +9,23 @@ export function useUrl(initialUrl: string) {
   const canGoBack = index.current > 0;
 
   function updateUrl(url: string) {
-    history.current.slice(0, index.current + 1);
+    history.current = history.current.slice(0, index.current + 1);
     history.current.push(url);
     index.current += 1;
     setUrl(url);
+    console.log(history.current);
   }
 
   function goBack() {
-    if (canGoBack) index.current -= 1;
+    if (!canGoBack) return;
+    index.current -= 1;
+    setUrl(history.current[index.current]);
   }
 
   function goNext() {
-    if (canGoNext) index.current += 1;
+    if (!canGoNext) return;
+    index.current += 1;
+    setUrl(history.current[index.current]);
   }
 
   return { url, updateUrl, goBack, goNext, canGoBack, canGoNext };
