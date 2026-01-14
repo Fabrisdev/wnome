@@ -30,7 +30,9 @@ type Props = {
     | "open-menu-symbolic"
     | "tab-new-symbolic"
     | "go-next-symbolic"
-    | "go-previous-symbolic";
+    | "go-previous-symbolic"
+    | "ephy-library-symbolic"
+    | "view-grid-symbolic";
 };
 
 export function Icon({ name }: Props) {
