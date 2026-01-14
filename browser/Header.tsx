@@ -24,6 +24,7 @@ export function Header({ id, changeUrl, url }: Props) {
         <Icon name="system-search-symbolic" />
       </Button>
       <input
+        data-no-drag
         value={url}
         onChange={(event) => changeUrl(event.target.value)}
         className="p-2 rounded-xl text-center min-w-[50%]"
