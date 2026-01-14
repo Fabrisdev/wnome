@@ -28,5 +28,10 @@ export function useColors() {
       border: theme === "dark" ? "#424247" : "#c4c4c5",
       bg: theme === "dark" ? "#36363a" : "#fff",
     },
+    browser: {
+      input: {
+        bg: theme === "dark" ? "#434347" : "#ebebeb",
+      },
+    },
   };
 }

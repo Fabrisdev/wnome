@@ -26,7 +26,11 @@ export function Header({ id, changeUrl, url }: Props) {
       <input
         value={url}
         onChange={(event) => changeUrl(event.target.value)}
-        className="bg-[#434347] p-2 rounded-xl text-center min-w-[50%]"
+        className="p-2 rounded-xl text-center min-w-[50%]"
+        style={{
+          backgroundColor: colors.browser.input.bg,
+          color: colors.text,
+        }}
       />
       <div className="flex justify-center items-center gap-2 absolute right-2">
         <Button noDrag onClick={() => {}}>
