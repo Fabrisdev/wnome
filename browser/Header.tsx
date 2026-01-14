@@ -70,6 +70,12 @@ export function Header({
 
       <div className="flex justify-center items-center gap-2 absolute right-2">
         <Button noDrag onClick={() => {}}>
+          <Icon name="view-grid-symbolic" />
+        </Button>
+        <Button noDrag onClick={() => {}}>
+          <Icon name="ephy-library-symbolic" />
+        </Button>
+        <Button noDrag onClick={() => {}}>
           <Icon name="open-menu-symbolic" />
         </Button>
         <Button
