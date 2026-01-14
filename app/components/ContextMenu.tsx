@@ -13,7 +13,7 @@ export function ContextMenu({ x, y, visible }: Props) {
 
   return (
     <div
-      className="fixed bg-[#36363a] p-1.5 rounded-2xl flex flex-col gap-1 min-w-55 border border-[#424247] text-[15px]"
+      className="fixed bg-[#36363a] p-1.5 rounded-2xl flex flex-col gap-1 min-w-55 border border-[#424247] text-[15px] z-10000"
       style={{ left: x, top: y }}
     >
       <Button
