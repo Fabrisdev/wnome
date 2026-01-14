@@ -12,6 +12,7 @@ export function WindowManager() {
     if (window.app === "settings")
       return (
         <Settings
+          zPos={window.zPos}
           initialPanel={window.options?.initialPanel ?? "wi-fi"}
           key={window.id}
           id={window.id}
@@ -19,11 +20,23 @@ export function WindowManager() {
         />
       );
     if (window.app === "run") {
-      return <Run key={window.id} id={window.id} position={window.position} />;
+      return (
+        <Run
+          key={window.id}
+          id={window.id}
+          position={window.position}
+          zPos={window.zPos}
+        />
+      );
     }
     if (window.app === "terminal") {
       return (
-        <Terminal key={window.id} id={window.id} position={window.position} />
+        <Terminal
+          key={window.id}
+          id={window.id}
+          position={window.position}
+          zPos={window.zPos}
+        />
       );
     }
     if (window.app === "browser") {
@@ -34,6 +47,7 @@ export function WindowManager() {
           id={window.id}
           position={window.position}
           initialUrl={window.options?.initialUrl ?? "https://google.com"}
+          zPos={window.zPos}
         />
       );
     }

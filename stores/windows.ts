@@ -19,6 +19,7 @@ type Window = {
   [K in App]: {
     id: string;
     app: K;
+    zPos: number;
     position: Position;
     options: SpawnOptions[K];
   };
@@ -59,6 +60,7 @@ export const useWindowsStore = create<WindowsState>((set) => ({
           y: 0,
         },
         options,
+        zPos: Math.max(0, ...state.windows.map((w) => w.zPos)),
       } as Window;
       return {
         windows: [...state.windows, newWindow],
@@ -76,11 +78,10 @@ export const useWindowsStore = create<WindowsState>((set) => ({
     })),
   focus: (id) =>
     set((state) => {
-      const window = state.windows.find((window) => window.id === id);
-      if (window === undefined) return state;
-      const filteredWindows = state.windows.filter(
-        (window) => window.id !== id,
+      const maxZ = Math.max(...state.windows.map((w) => w.zPos));
+      const newWindows: Window[] = state.windows.map((w) =>
+        w.id === id ? { ...w, zPos: maxZ + 1 } : { ...w },
       );
-      return { windows: [...filteredWindows, window] };
+      return { windows: newWindows };
     }),
 }));

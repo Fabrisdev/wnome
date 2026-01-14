@@ -31,10 +31,11 @@ type Props = {
   initialPanel: Panel;
 } & WindowProps;
 
-export function Settings({ initialPanel, id, position }: Props) {
+export function Settings({ initialPanel, id, position, zPos }: Props) {
   const [panel, setPanel] = useState(initialPanel);
   return (
     <Window
+      zPos={zPos}
       id={id}
       position={position}
       header={<Header id={id} panel={panel} />}

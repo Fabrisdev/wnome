@@ -16,6 +16,7 @@ export function Window({
   position,
   id,
   style,
+  zPos,
 }: PropsWithChildren<Props>) {
   const move = useWindowsStore((state) => state.move);
   const focus = useWindowsStore((state) => state.focus);
@@ -62,6 +63,7 @@ export function Window({
         top: position.y,
         borderColor: colors.window.border,
         backgroundColor: colors.window.bg,
+        zIndex: zPos,
         ...style,
       }}
       onPointerDown={() => focus(id)}

@@ -4,7 +4,7 @@ import { isAppName, useWindowsStore } from "@/stores/windows";
 import type { WindowProps } from "@/windows/types";
 import { Window } from "@/windows/Window";
 
-export function Run({ id, position }: WindowProps) {
+export function Run({ id, position, zPos }: WindowProps) {
   const colors = { bg: "#36363a", input: "#4b4d54", hint: "#c1c1c1" };
   const accent = useAccentColorStore((state) => state.color);
   const kill = useWindowsStore((state) => state.kill);
@@ -31,6 +31,7 @@ export function Run({ id, position }: WindowProps) {
 
   return (
     <Window
+      zPos={zPos}
       id={id}
       position={position}
       header={null}

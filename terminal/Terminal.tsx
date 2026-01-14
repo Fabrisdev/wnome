@@ -7,7 +7,7 @@ import { Window } from "@/windows/Window";
 import { fakeNeofetch } from "./commands/neofetch";
 import { Header } from "./Header";
 
-export function Terminal({ id, position }: WindowProps) {
+export function Terminal({ id, position, zPos }: WindowProps) {
   const colors = useColors();
   const fs = useFileSystemStore((state) => state.fs);
   const add = useFileSystemStore((state) => state.add);
@@ -70,6 +70,7 @@ export function Terminal({ id, position }: WindowProps) {
 
   return (
     <Window
+      zPos={zPos}
       id={id}
       position={position}
       className="p-0!"
