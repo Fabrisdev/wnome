@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/app/components/Button";
 import { useColors } from "@/settings/hooks/useColors";
 import { useWindowsStore } from "@/stores/windows";
@@ -24,6 +25,17 @@ export function Header({
 }: Props) {
   const kill = useWindowsStore((state) => state.kill);
   const colors = useColors();
+  const [inputValue, setInputValue] = useState(url);
+
+  useEffect(() => {
+    setInputValue(url);
+  }, [url]);
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    changeUrl(inputValue);
+  }
+
   return (
     <div
       className="flex justify-center items-center h-10 relative rounded-2xl border rounded-b-none shadow-xs p-6"
@@ -43,16 +55,19 @@ export function Header({
           <Icon name="tab-new-symbolic" />
         </Button>
       </div>
-      <input
-        data-no-drag
-        value={url}
-        onChange={(event) => changeUrl(event.target.value)}
-        className="p-2 rounded-xl text-center min-w-[50%]"
-        style={{
-          backgroundColor: colors.browser.input.bg,
-          color: colors.text,
-        }}
-      />
+      <form onSubmit={handleSubmit} className="min-w-[50%]">
+        <input
+          data-no-drag
+          value={inputValue}
+          onChange={(event) => setInputValue(event.target.value)}
+          className="p-2 rounded-xl text-center w-full"
+          style={{
+            backgroundColor: colors.browser.input.bg,
+            color: colors.text,
+          }}
+        />
+      </form>
+
       <div className="flex justify-center items-center gap-2 absolute right-2">
         <Button noDrag onClick={() => {}}>
           <Icon name="open-menu-symbolic" />
