@@ -13,7 +13,6 @@ export function useUrl(initialUrl: string) {
     history.current.push(url);
     index.current += 1;
     setUrl(url);
-    console.log(history.current);
   }
 
   function goBack() {
