@@ -6,7 +6,7 @@ export function WebFrame({ url }: Props) {
   return (
     <iframe
       src={url}
-      className="min-w-250 min-h-150 rounded-b-xl"
+      className="min-w-250 w-full min-h-150 h-full rounded-b-xl"
       title="Embedded Browser"
     />
   );

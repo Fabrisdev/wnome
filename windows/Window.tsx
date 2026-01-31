@@ -57,7 +57,7 @@ export function Window({
 
   return (
     <div
-      className={`fixed p-1.5 rounded-2xl border text-[15px] ${className} select-none`}
+      className={`fixed p-1.5 rounded-2xl border text-[15px] ${className} select-none resize overflow-auto`}
       style={{
         left: position.x,
         top: position.y,
