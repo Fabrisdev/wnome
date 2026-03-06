@@ -17,7 +17,7 @@ export default function Home() {
 
     function handleKeypress(event: KeyboardEvent) {
       keysPressed[event.key] = true;
-      if (keysPressed.Alt && keysPressed.F1) {
+      if (keysPressed.Alt) {
         spawn("run");
       }
     }
